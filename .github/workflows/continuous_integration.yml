@@ -67,6 +67,10 @@ jobs:
         with:
           coverageLocations: coverage.xml:cobertura
 
+      - name: Fix coverage.xml for sonarcloud
+        # Because of https://stackoverflow.com/questions/57220171/sonarqube-client-fails-to-parse-pytest-coverage-results
+        run: sed -i 's/filename\=\"/filename\=\"\//g' coverage.xml
+
       - name: SonarCloud Scan
         # You may pin to the exact commit or the version.
         # uses: SonarSource/sonarcloud-github-action@f4c6e4d91ea9785ec823eaeed459042606123402
