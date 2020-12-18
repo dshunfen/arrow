@@ -76,7 +76,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           args: >
-            -X
             -Dsonar.organization=dshunfen
             -Dsonar.projectKey=dshunfen_arrow
             -Dsonar.python.coverage.reportPaths=coverage.xml
