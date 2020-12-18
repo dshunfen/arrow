@@ -73,3 +73,8 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v1.4
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_CLOUD_TOKEN }}
+        with:
+          args: >
+            -Dsonar.organization=arrow
+            -Dsonar.projectKey=arrow
+            -Dsonar.python.coverage.reportPaths=coverage.xml
