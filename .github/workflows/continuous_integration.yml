@@ -68,8 +68,8 @@ jobs:
           coverageLocations: coverage.xml:cobertura
 
       - name: Fix coverage.xml for sonarcloud
-        # Because of https://stackoverflow.com/questions/57220171/sonarqube-client-fails-to-parse-pytest-coverage-results
-        run: sed -i 's/filename\=\"/filename\=\"\//g' coverage.xml
+        # Because of https://stackoverflow.com/questions/40568089/sonarqube-scanner-cannot-resolve-relative-file-path-in-phpunit-coverage-xml-file
+        run: sed -i 's/filename\=\"/filename\=\"\/github\/workspace\/arrow\//g' coverage.xml
 
       - name: SonarCloud Scan
         # You may pin to the exact commit or the version.
@@ -83,3 +83,5 @@ jobs:
             -Dsonar.organization=dshunfen
             -Dsonar.projectKey=dshunfen_arrow
             -Dsonar.python.coverage.reportPaths=coverage.xml
+            -Dsonar.test.exclusions=tests/**
+            -Dsonar.tests=tests/
