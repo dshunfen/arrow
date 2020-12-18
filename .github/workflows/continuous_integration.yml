@@ -66,3 +66,8 @@ jobs:
           CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_API_TOKEN }}
         with:
           coverageLocations: coverage.xml:cobertura
+          
+      - name: SonarCloud Scan
+        # You may pin to the exact commit or the version.
+        # uses: SonarSource/sonarcloud-github-action@f4c6e4d91ea9785ec823eaeed459042606123402
+        uses: SonarSource/sonarcloud-github-action@v1.4
