@@ -73,6 +73,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v1.4
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_CLOUD_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           args: >
             -Dsonar.organization=arrow
