@@ -83,4 +83,3 @@ jobs:
             -Dsonar.organization=dshunfen
             -Dsonar.projectKey=dshunfen_arrow
             -Dsonar.python.coverage.reportPaths=coverage.xml
-            -Dsonar.tests=tests/
